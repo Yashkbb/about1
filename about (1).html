@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — EcomEasy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Noto Sans',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6;}
+    a{color:#ff6b00;}
+    header{background:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #ff6b00;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .logo{font-family:'Baloo 2',sans-serif;font-size:22px;color:#ff6b00;font-weight:800;}
+    .logo span{color:#1a1a2e;}
+    .logo small{display:block;font-size:10px;font-weight:600;color:#64748b;letter-spacing:0.5px;margin-top:-2px;}
+    .back-link{font-size:13px;font-weight:700;color:#ff6b00;text-decoration:none;}
+    .back-link:hover{text-decoration:underline;}
+
+    /* HERO */
+    .about-hero{background:linear-gradient(135deg,#1a1a2e 0%,#0f3460 100%);padding:56px 20px;text-align:center;position:relative;overflow:hidden;}
+    .about-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,107,0,0.15) 0%,transparent 60%);pointer-events:none;}
+    .about-hero .tag{display:inline-block;background:#ff6b00;color:#fff;font-size:12px;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+    .about-hero h1{font-family:'Baloo 2',sans-serif;font-size:clamp(26px,5vw,40px);font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2;}
+    .about-hero h1 span{color:#ff6b00;}
+    .about-hero p{font-size:15px;color:#94a3b8;max-width:520px;margin:0 auto;}
+
+    main{max-width:720px;margin:0 auto;padding:48px 20px 64px;}
+
+    /* FOUNDER CARD */
+    .founder-card{background:#fff;border-radius:20px;padding:32px 28px;border:1.5px solid #ffd9b3;background:linear-gradient(135deg,#fff8f0,#fff);display:flex;gap:24px;align-items:flex-start;margin-bottom:28px;}
+    .founder-img{width:90px;height:90px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #ff6b00;box-shadow:0 4px 16px rgba(255,107,0,0.25);}
+    .founder-info h2{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:800;color:#1a1a2e;margin-bottom:4px;}
+    .founder-info .role{font-size:13px;color:#ff6b00;font-weight:700;margin-bottom:12px;}
+    .founder-info p{font-size:14px;color:#475569;line-height:1.75;}
+    .founder-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+    .tag-chip{font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;}
+
+    /* STATS */
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+    .stat-card{background:#fff;border-radius:16px;padding:20px;text-align:center;border:1.5px solid #e2e8f0;box-shadow:0 2px 12px rgba(0,0,0,0.05);}
+    .stat-num{font-family:'Baloo 2',sans-serif;font-size:28px;font-weight:800;color:#ff6b00;}
+    .stat-label{font-size:12px;color:#64748b;margin-top:4px;}
+
+    /* WHAT WE DO */
+    .card{background:#fff;border-radius:16px;padding:28px;border:1.5px solid #e2e8f0;margin-bottom:20px;}
+    .card h3{font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:800;color:#1a1a2e;margin-bottom:16px;}
+    .product-item{display:flex;gap:14px;align-items:flex-start;padding:14px;background:#f8fafc;border-radius:12px;margin-bottom:10px;border:1px solid #e2e8f0;}
+    .product-item:last-child{margin-bottom:0;}
+    .product-icon{font-size:28px;flex-shrink:0;}
+    .product-title{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:4px;}
+    .product-desc{font-size:13px;color:#64748b;line-height:1.6;}
+
+    /* MISSION */
+    .mission-box{background:linear-gradient(135deg,#1a1a2e,#0f3460);border-radius:16px;padding:28px;color:#fff;margin-bottom:20px;}
+    .mission-box h3{font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:800;color:#fbbf24;margin-bottom:12px;}
+    .mission-box p{font-size:14px;color:#cbd5e1;line-height:1.75;}
+
+    /* CONTACT */
+    .contact-card{background:#fff;border-radius:16px;padding:28px;border:1.5px solid #e2e8f0;}
+    .contact-card h3{font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:800;color:#1a1a2e;margin-bottom:16px;}
+    .contact-row{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#f8fafc;border-radius:10px;margin-bottom:10px;font-size:14px;color:#475569;}
+    .contact-row:last-child{margin-bottom:0;}
+    .contact-row a{color:#ff6b00;font-weight:700;text-decoration:none;}
+    .contact-row a:hover{text-decoration:underline;}
+
+    footer{background:#1a1a2e;color:#94a3b8;text-align:center;padding:28px 20px;font-size:13px;}
+    .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:12px;font-size:13px;}
+    .footer-links a{color:#94a3b8;text-decoration:none;}
+    .footer-links a:hover{color:#fbbf24;}
+
+    @media(max-width:600px){
+      main{padding:32px 16px 56px;}
+      .founder-card{flex-direction:column;gap:16px;padding:20px 16px;}
+      .stats-grid{grid-template-columns:1fr 1fr;}
+      .stats-grid .stat-card:last-child{grid-column:span 2;}
+      .card,.mission-box,.contact-card{padding:20px 16px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ECOMEASY<span>TOOL</span><small>ecomeasy.store</small></div>
+  <a href="/" class="back-link">← Wapas Jao</a>
+</header>
+
+<!-- HERO -->
+<div class="about-hero">
+  <span class="tag">Our Story</span>
+  <h1>India ke E-commerce Sellers ke liye<br><span>Banaya Gaya EcomEasy</span></h1>
+  <p>Ek real seller ka experience — hazaaron sellers ki takleef samajhke banaya gaya solution</p>
+</div>
+
+<main>
+
+  <!-- FOUNDER -->
+  <div class="founder-card">
+    <img
+      src="https://i.ibb.co/fzFBtgC9/335608843-920585562478021-5775171358319821299-n.jpg"
+      alt="JITENDER KUMAR — Founder EcomEasy"
+      class="founder-img"
+      onerror="this.style.display='none'"
+    />
+    <div class="founder-info">
+      <h2>JITENDER KUMAR</h2>
+      <div class="role">Founder — EcomEasy · ecomeasy.store</div>
+      <p>
+        "Maine khud Meesho aur Flipkart pe selling ki hai — aur main jaanta hoon manual listing kitni boring aur time-consuming hoti hai. Ek ek product ka title, description, category, size, color — sab baar baar fill karna padta tha. Tab socha ki is process ko easy banana padega. EcomEasy usi soch ka result hai — Indian sellers ke liye, Indian sellers ke dwara."
+      </p>
+      <div class="founder-tags">
+        <span class="tag-chip" style="background:#dcfce7;color:#166534;">✅ Real Seller since 2024</span>
+        <span class="tag-chip" style="background:#fff3e8;color:#cc5500;">🌐 ecomeasy.store</span>
+        <span class="tag-chip" style="background:#eff6ff;color:#1d4ed8;">📍 New Delhi, India</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num">2,847+</div>
+      <div class="stat-label">Happy Sellers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">5.0 ⭐</div>
+      <div class="stat-label">Avg Rating</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2022</div>
+      <div class="stat-label">Since</div>
+    </div>
+  </div>
+
+  <!-- WHAT WE SELL -->
+  <div class="card">
+    <h3>📦 Hum Kya Bechte Hain</h3>
+    <div class="product-item">
+      <span class="product-icon">📄</span>
+      <div>
+        <div class="product-title">Listing Optimization PDF Guide</div>
+        <div class="product-desc">Meesho &amp; Flipkart pe better listings kaise banayein — title, description, category tips — sab ek guide mein.</div>
+      </div>
+    </div>
+    <div class="product-item">
+      <span class="product-icon">🔍</span>
+      <div>
+        <div class="product-title">SEO Keyword Research Guide</div>
+        <div class="product-desc">E-commerce platforms pe sahi keywords kaise dhundhein — zyada visibility, zyada organic orders ke liye.</div>
+      </div>
+    </div>
+    <div class="product-item">
+      <span class="product-icon">🎁</span>
+      <div>
+        <div class="product-title">Bonus Guides (FREE with purchase)</div>
+        <div class="product-desc">Shipping cost optimization, trending products finder, aur 10 din mein 2000 orders strategy — sab bundle mein.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="mission-box">
+    <h3>🎯 Hamari Mission</h3>
+    <p>
+      India mein lakho log Meesho aur Flipkart pe selling karte hain — lekin unhe sahi guidance nahi milti. Hum chahte hain ki har chhota seller — chahe wo Delhi ka ho ya rural India ka — professional seller ki tarah list kar sake, compete kar sake, aur grow kar sake. EcomEasy usi gap ko fill karta hai: practical, affordable, aur Hinglish mein samajhne layak guides.
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <h3>📬 Humse Baat Karo</h3>
+    <div class="contact-row">
+      <span>👤</span>
+      <span><strong>JITENDER KUMAR</strong> — Founder, EcomEasy</span>
+    </div>
+    <div class="contact-row">
+      <span>📍</span>
+      <span>S-52, Budhvihar Phase 1, New Delhi – 110086, India</span>
+    </div>
+    <div class="contact-row">
+      <span>📧</span>
+      <span><a href="mailto:yashsethi733@gmail.com">yashsethi733@gmail.com</a></span>
+    </div>
+    <div class="contact-row">
+      <span>💬</span>
+      <span>WhatsApp: <a href="https://wa.me/918595735564">+91 85957 35564</a> &nbsp;·&nbsp; Mon–Sat 10AM–8PM IST</span>
+    </div>
+    <div class="contact-row">
+      <span>🌐</span>
+      <span><a href="https://ecomeasy.store">ecomeasy.store</a></span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="/terms">Terms &amp; Conditions</a>
+    <span style="color:#334155;">|</span>
+    <a href="/refund">Refund Policy</a>
+    <span style="color:#334155;">|</span>
+    <a href="/cancellation">Cancellation Policy</a>
+    <span style="color:#334155;">|</span>
+    <a href="/privacy">Privacy Policy</a>
+    <span style="color:#334155;">|</span>
+    <a href="/about">About Us</a>
+  </div>
+  <p>© 2026 EcomEasy · <a href="https://ecomeasy.store" style="color:#fbbf24;">ecomeasy.store</a> · JITENDER KUMAR, New Delhi</p>
+</footer>
+
+</body>
+</html>
